@@ -1,0 +1,172 @@
+.card {
+   height: 38rem;
+   perspective: 150rem;
+   position: relative;
+
+   &__side {
+        box-shadow: 0 1rem 1.5rem rgba($color-black, 0.1);
+        border-radius: 3px;
+        backface-visibility: hidden;
+        width: 100%;
+        height: 38rem;
+        transition: all 0.8s;
+        position: absolute;
+        top: 0;
+        left: 0;   
+        overflow: hidden;
+
+       &--front {
+           background-color: $color-white;
+       }
+
+       &--back {
+           transform: rotateY(180deg);
+
+           &-1 {
+                background-image: linear-gradient(
+                    to right bottom, 
+                    $color-secondary-light, 
+                    $color-secondary-dark);
+            }
+            
+            &-2 {
+                background-image: linear-gradient(
+                    to right bottom, 
+                    $color-primary-light,
+                    $color-primary-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(
+                    to right bottom, 
+                    $color-tertiary-light,
+                    $color-tertiary-dark);
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg)
+    }
+
+
+    &__picture {
+        background-size: cover;
+        background-position: top;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        height: 17rem;
+
+        &--1 {
+            background-image: linear-gradient(
+                to right bottom, 
+                $color-secondary-light, 
+                $color-secondary-dark),
+                url("../../img/nat-5.jpg");
+        }
+        
+        &--2 {
+            background-image: linear-gradient(
+                to right bottom, 
+                $color-primary-light, 
+                $color-primary-dark),
+                url("../../img/nat-6.jpg");
+        }
+
+        &--3 {
+            background-image: linear-gradient(
+                to right bottom, 
+                $color-tertiary-light, 
+                $color-tertiary-dark),
+                url("../../img/nat-7.jpg");
+        }
+    }
+
+    &__heading {
+        color: $color-white;
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        position: absolute;
+        top: 9.5rem;
+        right: 1.5rem;
+        text-align: right;
+        width: 75%;
+    }
+
+    &__heading-span {
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        padding: 0.7rem 1rem;
+
+        
+        &--1 {
+            background-image: linear-gradient(
+                to right bottom, 
+                rgba($color-secondary-light, 0.85), 
+                rgba($color-secondary-dark, 0.85));
+        }
+
+        &--2 {
+            background-image: linear-gradient(
+                to right bottom, 
+                rgba($color-primary-light, 0.85), 
+                rgba($color-primary-dark, 0.85));
+        }
+       
+        &--3 {
+            background-image: linear-gradient(
+                to right bottom, 
+                rgba($color-tertiary-light, 0.85), 
+                rgba($color-tertiary-dark, 0.85));
+        }
+    }
+
+    &__details {
+        padding: 2rem;  
+        text-transform: capitalize;
+        width: 80%;
+        margin: 0 auto;
+
+        ul {
+            color: $color-grey-dark;
+            list-style: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+
+            li {
+                padding: 0.7rem;
+                
+                &:not(:last-child) {
+                    border-bottom: 2px solid $color-grey-light-1;
+                }
+            }
+        }
+    }
+
+    &__back {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+     
+        .price-box {
+            color: white;
+            margin-bottom: 5rem;
+
+            &__only {
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
+
+            &__value {
+                font-size: 5rem;
+                font-weight: 100;
+            }
+        }
+    }
+}

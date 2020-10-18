@@ -1,0 +1,103 @@
+.btn {
+    transition: all .2s;
+    cursor: pointer;
+
+    &, 
+    &:link,
+    &:visited {
+        padding: 1.1rem 3rem;
+        border-width: 0;
+        border-radius: 100rem;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 0.4rem 0.6rem rgba($color-black, 0.3);
+
+        &::after {
+            transform: scaleX(1.2) scaleY(1.4);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-2px);
+        box-shadow: 0px 0.2rem 0.5rem rgba($color-black, 0.3);
+        outline: none;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &:after {
+            background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:after {
+            background-color: $color-primary;
+        }
+    }
+
+    &--animated {
+        animation-name: moveInBottom;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: backwards;
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 100rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+}
+
+.btn-text {
+    cursor: pointer;
+
+    &,
+    &:link,
+    &:visited {
+        border: 0;
+        border-bottom: 1px solid;
+        padding: 0.5rem 0.5rem;
+        text-decoration: none;
+        background-color: transparent;
+        display: inline-block;
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+   
+
+    &--green {
+        color: $color-primary;
+        border-color: $color-primary;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-primary;
+            border-color: transparent;
+        }
+    }
+}

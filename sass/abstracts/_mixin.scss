@@ -1,0 +1,41 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+/*
+    < 600px: phone
+    600 - 900: tab-portrait
+    900 - 1200: tablet-landscape
+    1200 - 1800: normal type
+    1800 - ..: big desktop
+
+    $breakpoint
+    + phone
+    + tab-port
+    + tab-land
+    + big-desktop
+
+    normal: 1em = 16px (in html, not in somewhere in body)
+    if 1em > 16px (zoom, ...) change view, ex: laptop 1920px but 1em = 24px -> show in tab-land
+*/
+@mixin respone($breakpoint) {
+    @if $breakpoint == big-desktop {
+        @media (max-width: 112.5em) { @content };
+    }
+
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content };
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content };
+    }
+
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };
+    }
+}
