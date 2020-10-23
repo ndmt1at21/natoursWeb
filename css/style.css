@@ -708,7 +708,7 @@ body {
       text-align: center; } }
   .footer__logo-box {
     width: 12rem;
-    margin: 0 auto; }
+    margin: 0 auto 5rem; }
     @media (max-width: 56.25em) {
       .footer__logo-box {
         width: 8rem; } }
@@ -718,6 +718,7 @@ body {
       .footer__logo {
         width: 8rem; } }
   .footer__navigation {
+    display: inline-block;
     border-top: 1px solid #777;
     padding: 1rem 0; }
     @media (max-width: 56.25em) {

@@ -10,7 +10,7 @@
 
     &__logo-box {
         width: 12rem;
-        margin: 0 auto;
+        margin: 0 auto 5rem;
 
         @include respone(tab-port) {
             width: 8rem;
@@ -26,6 +26,7 @@
     }
 
     &__navigation {
+        display: inline-block;
         border-top: 1px solid $color-grey-dark;
         padding: 1rem 0;
 
