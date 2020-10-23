@@ -3,7 +3,11 @@
     margin: 0 auto;
     
     @include respone(tab-port) {
-        max-width: 30rem;
+        max-width: 50rem;
+    }
+
+    @include respone(phone) {
+        max-width: 40rem;
     }
 
     &:not(:last-child) {

@@ -52,4 +52,23 @@
         transform: translateX(-2.5rem) scale(1);
         filter: blur(3px) brightness(80%);
     }
+
+    @include respone(tab-port) {
+        max-width: 100%;
+    }
+    
+    @include respone(phone) {
+        transform: none;
+        padding: 3rem;
+        max-width: 100%;
+        
+        &__shape {
+            padding-left: 1rem;
+            transform: translateX(-1rem);
+        }
+
+        &__text {
+            transform: none;
+        }
+    }
 }
