@@ -1,40 +1,45 @@
 .footer {
     background-color: $color-grey-dark-3;
-    padding: 7rem;
+    padding: 7rem 0;
     color: $color-grey-light-2;
     
+    @include respone(tab-port) {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
     &__logo-box {
         width: 12rem;
         margin: 0 auto;
+
+        @include respone(tab-port) {
+            width: 8rem;
+        }
     }
 
     &__logo {
         width: 12rem;
-    }
-
-    .row {
-        margin-top: 7rem;
 
         @include respone(tab-port) {
-            margin-top: 3rem;
-            text-align: center;
+            width: 8rem;
         }
     }
 
     &__navigation {
-        display: inline-block;
         border-top: 1px solid $color-grey-dark;
         padding: 1rem 0;
 
         @include respone(tab-port) {
-            display: block;
+            margin-top: 2rem;
             width: 100%;
             text-align: center;
         }
     }
 
+    @include clearfix;
+
     &__item {
-        float: left;
+        display: inline-block;  
         list-style: none;
 
         &:not(:last-child) {
@@ -64,10 +69,15 @@
     }
 
     &__copyright {
+        float: right;
         border-top: 1px solid $color-grey-dark;
         padding: 1rem;
         font-size: 1.1rem;
-        float: right;
         width: 90%;
+
+        @include respone(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 }
